@@ -32,7 +32,7 @@ class Controls
                     break;
             }
             // Logging values in Table format
-            console.table(this);
+            // console.table(this);
         }
 
         // On key release bool value changes to false
@@ -52,7 +52,7 @@ class Controls
                     break;
             }
             // Logging values in Table format
-            console.table(this);
+            // console.table(this);
         }
     }
 }
