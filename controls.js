@@ -15,6 +15,7 @@ class Controls
     #addkeyboardListeners(ctx)
     {
         // On key press bool value changes to true
+        // Note: due to arrow function "this" will refer to the obj
         document.onkeydown=(event)=>{
             switch (event.key) {
                 case "ArrowLeft":
