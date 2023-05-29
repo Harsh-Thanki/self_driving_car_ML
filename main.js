@@ -1,6 +1,5 @@
 // Positioning the canvas
 const canvas = document.getElementById("MyCanvas");
-canvas.height = window.innerHeight;
 canvas.width = 200;
 
 // Creating 2D context to draw
@@ -14,6 +13,7 @@ animate();
 function animate()
 {
     car.update();
+    canvas.height = window.innerHeight;
     // Calling draw() of class Car
     car.draw(ctx);
     requestAnimationFrame(animate);
