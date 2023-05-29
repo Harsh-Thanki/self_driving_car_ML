@@ -9,5 +9,12 @@ const ctx = canvas.getContext("2d");
 // Object of class Car
 const car = new Car(100, 100, 30, 50);
 
-// Calling draw() of class Car
-car.draw(ctx);
+animate();
+
+function animate()
+{
+    car.update();
+    // Calling draw() of class Car
+    car.draw(ctx);
+    requestAnimationFrame(animate);
+}
