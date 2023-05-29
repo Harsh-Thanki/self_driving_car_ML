@@ -40,6 +40,13 @@ class Car
         if (Math.abs(this.speed)<this.friction) {
             this.speed=0;
         }
+
+        if (this.controls.left) {
+            this.x-=2;
+        }
+        if (this.controls.right) {
+            this.x+=2;
+        }
         this.y-=this.speed;
     }
 
