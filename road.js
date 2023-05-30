@@ -1,15 +1,13 @@
-class Road
-{
-    constructor(x,width,lanecount=3)
-    {
+class Road{
+    constructor(x,width,laneCount=3){
         this.x=x;
         this.width=width;
-        this.lanecount=lanecount;
+        this.laneCount=laneCount;
 
         this.left=x-width/2;
         this.right=x+width/2;
 
-        const infinity=10000000000;
+        const infinity=1000000;
         this.top=-infinity;
         this.bottom=infinity;
 
@@ -23,33 +21,30 @@ class Road
         ];
     }
 
-    getLaneCenter(laneIndex)
-    {
-        const laneWidth=this.width/this.lanecount;
+    getLaneCenter(laneIndex){
+        const laneWidth=this.width/this.laneCount;
         return this.left+laneWidth/2+
-        Math.min(laneIndex,this.lanecount-1)*laneWidth;
+            Math.min(laneIndex,this.laneCount-1)*laneWidth;
     }
 
-    draw(ctx)
-    {
+    draw(ctx){
         ctx.lineWidth=5;
         ctx.strokeStyle="white";
 
-        for(let i=1;i<=this.lanecount-1;i++)
-        {
+        for(let i=1;i<=this.laneCount-1;i++){
             const x=lerp(
                 this.left,
                 this.right,
-                i/this.lanecount
+                i/this.laneCount
             );
-            // Issue: setLineDash call makes middle lanes disappear
+            
             ctx.setLineDash([20,20]);
             ctx.beginPath();
             ctx.moveTo(x,this.top);
             ctx.lineTo(x,this.bottom);
             ctx.stroke();
         }
-        // Issue: setLineDash call makes middle lanes disappear
+
         ctx.setLineDash([]);
         this.borders.forEach(border=>{
             ctx.beginPath();
