@@ -26,12 +26,14 @@ class Road
                 this.right,
                 i/this.lanecount
             );
-            if(i>0 && i<this.lanecount){
-                ctx.setLineDash([20,20]);
-            }
-            else{
-                ctx.setLineDash([]);
-            }
+            // Issue: setLineDash call makes middle lanes disappear
+            
+            // if(i>0 && i<this.lanecount){
+            //     ctx.setLineDash([20,20]);
+            // }
+            // else{
+            //     ctx.setLineDash([]);
+            // }
             ctx.beginPath();
             ctx.moveTo(x,this.top);
             ctx.lineTo(x,this.bottom);
