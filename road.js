@@ -14,6 +14,13 @@ class Road
         this.bottom=infinity;
     }
 
+    getLaneCenter(laneIndex)
+    {
+        const laneWidth=this.width/this.lanecount;
+        return this.left+laneWidth/2+
+        Math.min(laneIndex,this.lanecount-1)*laneWidth;
+    }
+
     draw(ctx)
     {
         ctx.lineWidth=5;
@@ -27,7 +34,7 @@ class Road
                 i/this.lanecount
             );
             // Issue: setLineDash call makes middle lanes disappear
-            
+
             // if(i>0 && i<this.lanecount){
             //     ctx.setLineDash([20,20]);
             // }
