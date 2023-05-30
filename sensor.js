@@ -10,6 +10,10 @@ class Sensor
     }
 
     update(){
+        this.#castRays();
+    }
+
+    #castRays(){
         this.rays=[];
         for(let i=0;i<this.rayCount;i++){
             // Remove "+this.car.angle" to make sensors stay straight regradless of car position
