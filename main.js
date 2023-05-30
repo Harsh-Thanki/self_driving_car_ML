@@ -17,9 +17,15 @@ function animate()
 {
     car.update();
     canvas.height = window.innerHeight;
+
+    ctx.save();
+    ctx.translate(0,-car.y+canvas.height*0.7)
+
     // Calling draw() of class Road
     road.draw(ctx);
     // Calling draw() of class Car
     car.draw(ctx);
+
+    ctx.restore();
     requestAnimationFrame(animate);
 }
