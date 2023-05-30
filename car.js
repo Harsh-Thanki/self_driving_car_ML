@@ -13,13 +13,15 @@ class Car
         this.friction=0.05;
         this.angle=0;
 
-        // Controls class Object
+        // Objects created
+        this.sensor = new Sensor(this);
         this.controls = new Controls();
     }
 
     update()
     {   
         this.#move();
+        this.sensor.update();
     }
 
     #move()
@@ -76,5 +78,7 @@ class Car
         
         // Comment following restore call to become "F&F Drfter"
         ctx.restore();
+
+        this.sensor.draw(ctx);
     }
 }
