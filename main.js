@@ -22,21 +22,21 @@ if(localStorage.getItem("bestBrain")){
 }
 
 const traffic=[
-    new Car(road.getLaneCenter(1),-100,30,50,"DUMMY",2),
-    new Car(road.getLaneCenter(0),-300,30,50,"DUMMY",2),
-    new Car(road.getLaneCenter(2),-300,30,50,"DUMMY",2),
-    new Car(road.getLaneCenter(0),-500,30,50,"DUMMY",2),
-    new Car(road.getLaneCenter(1),-500,30,50,"DUMMY",2),
-    new Car(road.getLaneCenter(1),-700,30,50,"DUMMY",2),
-    new Car(road.getLaneCenter(2),-700,30,50,"DUMMY",2),
-    new Car(road.getLaneCenter(1),-900,30,50,"DUMMY",2),
-    new Car(road.getLaneCenter(0),-900,30,50,"DUMMY",2),
-    new Car(road.getLaneCenter(2),-1100,30,50,"DUMMY",2),
-    new Car(road.getLaneCenter(1),-1100,30,50,"DUMMY",2),
-    new Car(road.getLaneCenter(1),-1300,30,50,"DUMMY",2),
-    new Car(road.getLaneCenter(0),-1300,30,50,"DUMMY",2),
-    new Car(road.getLaneCenter(0),-1500,30,50,"DUMMY",2),
-    new Car(road.getLaneCenter(2),-1500,30,50,"DUMMY",2),
+    new Car(road.getLaneCenter(1),-100,30,50,"DUMMY",2,getRandomColor()),
+    new Car(road.getLaneCenter(0),-300,30,50,"DUMMY",2,getRandomColor()),
+    new Car(road.getLaneCenter(2),-300,30,50,"DUMMY",2,getRandomColor()),
+    new Car(road.getLaneCenter(0),-500,30,50,"DUMMY",2,getRandomColor()),
+    new Car(road.getLaneCenter(1),-500,30,50,"DUMMY",2,getRandomColor()),
+    new Car(road.getLaneCenter(1),-700,30,50,"DUMMY",2,getRandomColor()),
+    new Car(road.getLaneCenter(2),-700,30,50,"DUMMY",2,getRandomColor()),
+    new Car(road.getLaneCenter(1),-900,30,50,"DUMMY",2,getRandomColor()),
+    new Car(road.getLaneCenter(0),-900,30,50,"DUMMY",2,getRandomColor()),
+    new Car(road.getLaneCenter(2),-1100,30,50,"DUMMY",2,getRandomColor()),
+    new Car(road.getLaneCenter(1),-1100,30,50,"DUMMY",2,getRandomColor()),
+    new Car(road.getLaneCenter(1),-1300,30,50,"DUMMY",2,getRandomColor()),
+    new Car(road.getLaneCenter(0),-1300,30,50,"DUMMY",2,getRandomColor()),
+    new Car(road.getLaneCenter(0),-1500,30,50,"DUMMY",2,getRandomColor()),
+    new Car(road.getLaneCenter(2),-1500,30,50,"DUMMY",2,getRandomColor())
 ];
 
 animate();
@@ -53,6 +53,7 @@ function discard(){
 function generateCars(N){
     const cars=[];
     for(let i=1;i<=N;i++){
+        // replace "AI" with "KEYS" to get manual control over car
         cars.push(new Car(road.getLaneCenter(1),100,30,50,"AI"));
     }
     return cars;
