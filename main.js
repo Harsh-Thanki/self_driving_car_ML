@@ -3,7 +3,7 @@ const carCanvas = document.getElementById("carCanvas");
 carCanvas.width = 200;
 
 // Creating 2D context to draw
-const ctx = carCanvas.getContext("2d");
+const carCtx = carCanvas.getContext("2d");
 
 // Object of class Road
 const road = new Road(carCanvas.width/2,carCanvas.width*0.9);
@@ -26,19 +26,19 @@ function animate()
     car.update(road.borders,traffic);
     carCanvas.height = window.innerHeight;
 
-    ctx.save();
-    ctx.translate(0,-car.y+carCanvas.height*0.7)
+    carCtx.save();
+    carCtx.translate(0,-car.y+carCanvas.height*0.7)
 
     // Calling draw() of class Road
-    road.draw(ctx);
+    road.draw(carCtx);
 
     for(let i=0;i<traffic.length;i++){
-        traffic[i].draw(ctx,"red");
+        traffic[i].draw(carCtx,"red");
     }
 
     // Calling draw() of class Car
-    car.draw(ctx,"blue");
+    car.draw(carCtx,"blue");
 
-    ctx.restore();
+    carCtx.restore();
     requestAnimationFrame(animate);
 }
